@@ -1,14 +1,18 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import random as random
 
-def points(n=1000):
+n = random.randint(2000, 20000)
+def points(n=n):
     x = np.random.uniform(size=n)
     y = np.random.uniform(size=n)
     return x, y
-x1, y1 = points()
-x2, y2 = points()
+x, y = points()
+
+
 fig = plt.figure(figsize=(4,4))
 ax = fig.add_subplot(111, title="Test scatter")
-ax.scatter(x1, y1, c=np.random.normal(x1,y1), s=15, cmap='rainbow', alpha=0.5)
-ax.scatter(x2, y2, c=np.random.normal(x2,y2), s=15, cmap='rainbow', alpha=0.5)
+plt.scatter(x, y, c=np.random.rand(len(x)), s=15, cmap='rainbow', alpha=0.8)
+plt.axis('off')
+plt.savefig("Nuage_"+str(n)+".png",bbox_inches="tight",dpi=1000)
 plt.show()
