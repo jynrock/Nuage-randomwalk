@@ -15,7 +15,7 @@ while i < 15:
 	x, y = points()
 	
 	
-	fig = plt.figure(figsize=(15,5))
+	fig = plt.figure(figsize=(10,10))
 	
 	plt.scatter(x, y, c=np.random.rand(len(x)), s=m, cmap='rainbow', alpha=0.6)
 	plt.axis('off')
